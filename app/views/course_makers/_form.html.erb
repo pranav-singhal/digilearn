@@ -1,0 +1,69 @@
+<%= form_for [@course, @course_maker] do |form| %>
+  <% if course_maker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course_maker.errors.count, "error") %> prohibited this course_maker from being saved:</h2>
+
+      <ul>
+      <% course_maker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :pg_no %>
+    <%= form.number_field :pg_no, id: :course_maker_pg_no %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :pg_name %>
+    <%= form.text_field :pg_name, id: :course_maker_pg_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :section1 %>
+    <%= form.text_area :section1, id: :course_maker_section1 %>
+  </div>
+  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'course_maker_section1' );
+                config.allowedContent = true;
+            </script>
+
+  <div class="field">
+    <%= form.label :section2 %>
+    <%= form.text_area :section2, id: :course_maker_section2 %>
+  </div>
+  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'course_maker_section2' );
+            </script>
+
+  <div class="field">
+    <%= form.label :section3 %>
+    <%= form.text_area :section3, id: :course_maker_section3 %>
+  </div>
+  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'course_maker_section3' );
+            </script>
+  <div class="field">
+    <%= form.label :section4 %>
+    <%= form.text_area :section4, id: :course_maker_section4 %>
+  </div>
+  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'course_maker_section4' );
+            </script>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

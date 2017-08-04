@@ -1,0 +1,16 @@
+
+
+<%if SellerProfile.where(seller_id: current_seller.id).first %>
+<h1>Welcome Seller</h1>
+
+<%= link_to 'my books', books_path %>
+
+<%=link_to "signout",destroy_seller_session_path, method: :delete%>
+<%= render 'books/form', book: @book %>
+<%=link_to "Update Book Details",books_path,method: :get%>
+<%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%>
+<%else%>
+<p>you need to create a profile before you can sell books with us</p>
+<p>follow the link below to get started</p>
+<%= link_to "make a seller profile", new_seller_profile_path(seller_id: current_seller.id)%>
+<%end%>

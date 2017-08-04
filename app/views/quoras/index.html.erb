@@ -1,0 +1,13 @@
+<div class="scaf">
+<p id="notice"><%= notice %></p>
+
+<h1>Question/Answer Forum</h1><br>
+
+        
+<% @quoras.each do|quora| %>
+<%= render 'section', quora: quora %>
+<% end %>
+<br>
+
+<%= link_to 'Add New Question', new_quora_path %>
+</div>

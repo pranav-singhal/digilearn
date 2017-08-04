@@ -1,0 +1,6 @@
+<%if check%>
+       <h1>Only Cash On Delivery Available</h1>
+       <%=link_to 'confirm',url_for(controller: :home,action: :confirm),method: :post%>
+    <%else%>
+        <%=link_to "Checkout", url_for(controller: :user_profiles,action: :new)%>
+    <%end%>

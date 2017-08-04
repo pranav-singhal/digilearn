@@ -1,0 +1,42 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <!--   <%= form.label :seller_id %> -->
+    <%= form.hidden_field :seller_id, id: :book_seller_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :book_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seller_price %>
+    <%= form.text_field :seller_price, id: :book_seller_price %>
+  </div>
+
+  <div class="field">
+   <!--  <%= form.label :user_price %> -->
+    <%= form.hidden_field :user_price, id: :book_user_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qunatity_in_stock %>
+    <%= form.number_field :qunatity_in_stock, id: :book_qunatity_in_stock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

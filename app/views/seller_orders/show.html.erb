@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @seller_order.seller %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @seller_order.product_id %>
+</p>
+
+<p>
+  <strong>Qunatity:</strong>
+  <%= @seller_order.qunatity %>
+</p>
+
+<p>
+  <strong>Seller price per unit:</strong>
+  <%= @seller_order.seller_price_per_unit %>
+</p>
+
+<%= link_to 'Edit', edit_seller_order_path(@seller_order) %> |
+<%= link_to 'Back', seller_orders_path %>

@@ -1,0 +1,64 @@
+
+<style type="text/css">
+.section{
+	display: flex;
+	flex-direction: column;
+	border-bottom: 2px solid black;
+}	
+.details{
+	width: 95%;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.img{
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: black;
+}
+.questions{
+	text-align: center;
+}
+p{
+	font-weight: 200px;
+	font-size: 20px;
+}
+</style>
+<div class="section">
+	<div class="details">
+		<div class="img"></div>
+		<div>
+			<% if quora.user_id.nil?%>
+			By: Anonymus
+			<% else %>
+			By: <%=User.where(id: quora.user_id).first.email %>
+			<% end %>
+		</div>
+	</div><br>
+	<div class="questions">
+		<% if quora.user_id == current_user.id %>
+		<p>Question: <%=quora.content%></p>
+		<%= link_to 'Show', quora %>
+        <%= link_to 'Edit', edit_quora_path(quora) %>
+        <%= link_to 'Destroy', quora, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Answer',url_for(controller: :quoras,action: :new_1, id: quora.id) %> 	
+        
+        <% else %>
+        <p>Question: <%=quora.content%></p>
+		<%= link_to 'Show', quora %>
+    	<%= link_to 'Answer',url_for(controller: :quoras,action: :new_1, id: quora.id) %>
+		<% end %>
+		<br><br>
+		<%ans=Quora.where(question_id: quora.id).first%>
+		<%if ans.nil?%>
+		<p>No answer avialable</p>
+		<%else%>
+		<% if ans.user_id == current_user.id %>
+		<p><em><b>Answer:</b></em> <%= ans.content%></p>
+		<%= link_to 'Edit', edit_quora_path(ans) %>
+        <%= link_to 'Destroy', ans, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+		<%end%>
+	</div>
+</div>

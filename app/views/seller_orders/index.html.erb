@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Seller Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seller</th>
+      <th>Product</th>
+      <th>Qunatity</th>
+      <th>Seller price per unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seller_orders.each do |seller_order| %>
+      <tr>
+        <td><%= seller_order.seller %></td>
+        <td><%= seller_order.product_id %></td>
+        <td><%= seller_order.qunatity %></td>
+        <td><%= seller_order.seller_price_per_unit %></td>
+        <td><%= link_to 'Show', seller_order %></td>
+        <td><%= link_to 'Edit', edit_seller_order_path(seller_order) %></td>
+        <td><%= link_to 'Destroy', seller_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seller Order', new_seller_order_path %>

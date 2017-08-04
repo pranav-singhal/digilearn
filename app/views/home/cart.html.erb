@@ -1,0 +1,22 @@
+<h1>Cart</h1>
+<%if @products.length>0%>
+  <% @products.each do|p|%>
+	<div class="cart_list">
+  <%=Book.where(id: p.books_id).first.name%>
+	<%=Book.where(id: p.books_id).first.user_price.to_i%>
+  </div>
+	<br>
+  <%end%>
+<%else%>
+    <h1> Your Cart is Empty</h1>
+<%end%>
+
+<%if @products.length>0 %>
+<%=link_to "Clear_cart",url_for(controller: :carts,action: :destroy,:id => current_user.id),method: :delete%>
+    <%if check%>
+        <%= link_to 'Checkout', url_for(controller: :user_profiles,action: :edit,:id=>current_user.id)%>
+    <%else%>
+        <%=link_to "Checkout", url_for(controller: :user_profiles,action: :new)%>
+    <%end%>
+<%end%>
+<%=link_to "Continue Shopping",url_for(controller: :home,action: :shop)%>

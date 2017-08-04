@@ -1,0 +1,21 @@
+<div id="main">
+
+
+<aside>
+<h2><%=@course.name%></h2>
+<ul>
+  <%@course.course_makers.order(pg_no: :asc).each do |course_maker|%>
+
+  <li>
+    <span> Lesson<%=course_maker.pg_no%>:</span><br>
+    <%=link_to course_maker.pg_name,url_for(controller: :course_makers, action: :showcontent ,course_maker: course_maker, course_id: @course.id), method: :post, remote: true %>
+  </li>
+  <%end%>
+</ul>
+
+</aside>
+
+<main id="showid">
+</main>
+</div>
+<%=link_to "back to courses", url_for(controller: :home, action: :courses), method: :get%>

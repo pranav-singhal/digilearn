@@ -1,0 +1,64 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "Whitney SSm A", "Whitney SSm B", "Lucida Grande", "Lucida Sans", Verdana, Helvetica, Arial, sans-serif;
+  border: 1px solid black;
+  border:none;
+
+}
+div#main{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  aside {
+    height:1000%;
+    width:20vw;
+    background: #42444E;
+    h2{
+      text-transform: uppercase;
+      color:white;
+      text-align: center;
+      margin:31px 0 31px 0;
+
+    }
+    ul {
+      list-style: none;
+      li{
+        text-align: center;
+        a{
+          text-decoration: none;
+        }
+        a:link{
+          color:white;
+        }
+        a:hover{
+          color:#2db34a;
+          transition: color 0.5s linear;
+        }
+        span{
+          color:#9092a1;
+        }
+      }
+    }
+  }
+
+  main {
+    width:80vw;
+    height: 100vh;
+    color: black;
+      div.section{
+        width:80vw;
+        padding-left:5vw;
+        padding-right: 5vw;
+        padding-top: 5vh;
+      }
+
+
+  }
+}

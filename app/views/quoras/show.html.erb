@@ -1,0 +1,18 @@
+<div class="scaf">
+<p id="notice"><%= notice %></p>
+
+<p >
+  <strong>Question:</strong>
+  <%= @quora.content %>
+</p>
+
+
+<ul>
+<% @answers.each do|answer|%>
+	<li><%=answer.content%></li>
+<%end%>
+</ul>
+<%= link_to 'Edit', edit_quora_path(@quora) %> |
+<%= link_to 'Answer', url_for(controller: :quoras,action: :new_1, id: params[:id]) %> |
+<%= link_to 'Back', quoras_path %>
+</div>

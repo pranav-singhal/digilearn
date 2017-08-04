@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller: one
+  name: MyString
+  address: MyString
+  credit: 1.5
+  debit: 1.5
+
+two:
+  seller: two
+  name: MyString
+  address: MyString
+  credit: 1.5
+  debit: 1.5

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Pg no:</strong>
+  <%= @course_maker.pg_no %>
+</p>
+
+<p>
+  <strong>Pg name:</strong>
+  <%= @course_maker.pg_name %>
+</p>
+
+<p>
+  <strong>Section1:</strong>
+  <%= @course_maker.section1 %>
+</p>
+
+<p>
+  <strong>Section2:</strong>
+  <%= @course_maker.section2 %>
+</p>
+
+<p>
+  <strong>Section3:</strong>
+  <%= @course_maker.section3 %>
+</p>
+
+<p>
+  <strong>Section4:</strong>
+  <%= @course_maker.section4 %>
+</p>
+
+<%= link_to 'Edit', edit_course_course_maker_path(course_id: @course,id: @course_maker) %> |
+<%= link_to 'Back', course_course_makers_path(@course) %>

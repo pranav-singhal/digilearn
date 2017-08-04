@@ -1,0 +1,31 @@
+<div class="books">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @book.seller %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong>Seller price:</strong>
+  <%= @book.seller_price %>
+</p>
+
+<p>
+  <strong>User price:</strong>
+  <%= @book.user_price %>
+</p>
+
+<p>
+  <strong>Qunatity in stock:</strong>
+  <%= @book.qunatity_in_stock %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+</div>

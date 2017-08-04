@@ -1,0 +1,12 @@
+document.getElementById("<%=@course.id%>").innerHTML="<%=@course.statusString%>"
+<%if @course.status==0%>
+// new Noty({
+//     ...
+//     text: 'Some notification text',
+//     ...
+// }).show();
+alert("course successfully published");
+
+<%else%>
+alert("course successfully retracted")
+<%end%>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @seller_profile.seller %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @seller_profile.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @seller_profile.address %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @seller_profile.credit %>
+</p>
+
+<p>
+  <strong>Debit:</strong>
+  <%= @seller_profile.debit %>
+</p>
+
+<%= link_to 'Edit', edit_seller_profile_path(@seller_profile) %> |
+<%= link_to 'Back to index', url_for(controller: :home, action: :seller) %>

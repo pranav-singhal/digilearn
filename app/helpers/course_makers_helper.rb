@@ -1,0 +1,2 @@
+module CourseMakersHelper
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: quora, local: true) do |form| %>
+  <% if quora.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quora.errors.count, "error") %> prohibited this quora from being saved:</h2>
+
+      <ul>
+      <% quora.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    
+    <%= form.text_area :content, id: :quora_content ,placeholder: "Ask Your Question" ,size: "90"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :question_id %>
+    <%= form.hidden_field :question_id, id: :quora_question_id %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>

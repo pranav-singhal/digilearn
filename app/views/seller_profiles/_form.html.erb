@@ -1,0 +1,29 @@
+<%= form_with(model: seller_profile, local: true) do |form| %>
+  <% if seller_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seller_profile.errors.count, "error") %> prohibited this seller_profile from being saved:</h2>
+
+      <ul>
+      <% seller_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :seller_profile_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :seller_profile_address %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
