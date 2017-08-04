@@ -1,16 +1,37 @@
 
 
-<%if SellerProfile.where(seller_id: current_seller.id).first %>
-<h1>Welcome Seller</h1>
 
-<%= link_to 'my books', books_path %>
 
-<%=link_to "signout",destroy_seller_session_path, method: :delete%>
-<%= render 'books/form', book: @book %>
-<%=link_to "Update Book Details",books_path,method: :get%>
-<%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%>
-<%else%>
-<p>you need to create a profile before you can sell books with us</p>
-<p>follow the link below to get started</p>
-<%= link_to "make a seller profile", new_seller_profile_path(seller_id: current_seller.id)%>
-<%end%>
+<div id="seller">
+<aside>
+  <nav>
+    <%if SellerProfile.where(seller_id: current_seller.id).first %>
+    <ul>
+      <li><img src="/logo.png"/></li>
+      <li>  <i class="fa fa-book" aria-hidden="true"></i><br />
+        <%= link_to 'my books', books_path %></li>
+      <li>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i><br /><%=link_to "Update Book Details",books_path,method: :get%></li>
+      <li> <i class="fa fa-user" aria-hidden="true"></i><br />
+         <%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%></li>
+      <li> <i class="fa fa-sign-out" aria-hidden="true"></i><br />
+         <%=link_to "signout",destroy_seller_session_path, method: :delete%></li>
+    </ul>
+  </nav>
+  <%end%>
+</aside>
+
+<main>
+  <%if SellerProfile.where(seller_id: current_seller.id).first %>
+  <h1>Welcome Seller</h1>
+<h3>Enter details of your book</h3>
+<hr />
+<div id="bookform">
+  <%= render 'books/form', book: @book %>
+</div>
+  <%else%>
+  <p>you need to create a profile before you can sell books with us</p>
+  <p>follow the link below to get started</p>
+  <%= link_to "make a seller profile", new_seller_profile_path(seller_id: current_seller.id)%>
+  <%end%>
+</main>
+</div>

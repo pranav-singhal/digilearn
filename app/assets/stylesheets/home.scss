@@ -5,7 +5,6 @@
   font-family: "Whitney SSm A", "Whitney SSm B", "Lucida Grande", "Lucida Sans", Verdana, Helvetica, Arial, sans-serif;
   border: 1px solid black;
   border:none;
-
 }
 
 div#main{
@@ -18,6 +17,7 @@ div#main{
     height:1000%;
     width:20vw;
     background: #42444E;
+
     h2{
       text-transform: uppercase;
       color:white;
@@ -62,11 +62,81 @@ div#main{
 }
 
 
-
 // harsh's code down below
 
 div.cart_list{
   background-color: rgb(230,230,231);
   width:100%;
   height:40px;
+}
+
+div#seller{
+  *{
+  }
+  aside {
+    ul{
+      img{
+        width:5vw;
+        height:5vw;
+        border-radius: 50%;
+      }
+      li{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        i{
+          color: white;
+        }
+        text-align: center;
+      }
+      list-style: none;
+
+    }
+    padding-left: 20px;
+    a{
+      color:white;
+      text-decoration: none;
+    }
+    float: left;
+    width:12vw;
+    height: 100vh;
+    background: #373330;
+  }
+  main{
+    padding-top: 10vh;
+    div#bookform{
+      background: #f8f8f8;
+      // margin-left: 10vw;
+      form{
+        font-size: 2em;
+        margin-left: 10vw;
+        input{
+
+          // border: 1px solid black;
+          border-radius:10%;
+
+        }
+      }
+    }
+    hr{
+      color:black;
+      width:50px;
+    }
+    color:#373330;
+
+    float:right;
+    width:88vw;
+      h1,h3{
+        width: 88vw;
+        text-align: center;
+      }
+  }
+
+
+
+
+
+
+
+
+
 }
