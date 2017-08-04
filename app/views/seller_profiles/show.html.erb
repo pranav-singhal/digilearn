@@ -1,9 +1,25 @@
 <p id="notice"><%= notice %></p>
+<aside>
+  <nav>
+    <%if SellerProfile.where(seller_id: current_seller.id).first %>
+    <ul>
+      <li><img src="/logo.png"/></li>
+      <li id="myBooks">  <i class="fa fa-book" aria-hidden="true"></i><br />
+        <%= link_to 'my books', books_path %></li>
+      <li id="sellerProfile"> <i class="fa fa-user" aria-hidden="true"></i><br />
+         <%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%></li>
+      <li> <i class="fa fa-sign-out" aria-hidden="true"></i><br />
+         <%=link_to "signout",destroy_seller_session_path, method: :delete%></li>
+      <li><i class="fa fa-pencil" aria-hidden="true"></i><br />
+        <%= link_to 'Edit my profile', edit_seller_profile_path(@seller_profile) %> </li>
+      <li><i class="fa fa-arrow-left" aria-hidden="true"></i><br />
+        <%= link_to "back to index", url_for(controller: :home, action: :seller)%></li>
+    </ul>
+  </nav>
+  <%end%>
+</aside>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @seller_profile.seller %>
-</p>
+<main>
 
 <p>
   <strong>Name:</strong>
@@ -24,6 +40,4 @@
   <strong>Debit:</strong>
   <%= @seller_profile.debit %>
 </p>
-
-<%= link_to 'Edit', edit_seller_profile_path(@seller_profile) %> |
-<%= link_to 'Back to index', url_for(controller: :home, action: :seller) %>
+</main>

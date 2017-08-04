@@ -1,5 +1,26 @@
 <div class="books">
 <p id="notice"><%= notice %></p>
+<aside>
+  <nav>
+    <%if SellerProfile.where(seller_id: current_seller.id).first %>
+    <ul>
+      <li><img src="/logo.png"/></li>
+      <li id="myBooks">  <i class="fa fa-book" aria-hidden="true"></i><br />
+        <%= link_to 'my books', books_path %></li>
+      <li> <i class="fa fa-user" aria-hidden="true"></i><br />
+         <%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%></li>
+      <li> <i class="fa fa-sign-out" aria-hidden="true"></i><br />
+         <%=link_to "signout",destroy_seller_session_path, method: :delete%></li>
+         <li><i class="fa fa-plus" aria-hidden="true"></i><br />
+           <%= link_to 'Add a Book', seller_path %></li>
+      <li><i class="fa fa-arrow-left" aria-hidden="true"></i><br />
+        <%= link_to "back to index", url_for(controller: :home, action: :seller)%></li>
+
+    </ul>
+  </nav>
+  <%end%>
+</aside>
+<main>
 
 <h1>Books</h1>
 
@@ -22,9 +43,8 @@
     <!--     <td><%= book.user_price %></td> -->
 
         <td><%= book.qunatity_in_stock %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit book details', edit_book_path(book) %></td>
+        <td><%= link_to 'Remove book from stock', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     <%end%>
@@ -33,6 +53,6 @@
 
 <br>
 
-<%= link_to 'New Book', seller_path %>
-<%= link_to "back to index", url_for(controller: :home, action: :seller)%>
+</main>
+
 </div>

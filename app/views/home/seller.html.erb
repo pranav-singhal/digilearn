@@ -10,7 +10,6 @@
       <li><img src="/logo.png"/></li>
       <li>  <i class="fa fa-book" aria-hidden="true"></i><br />
         <%= link_to 'my books', books_path %></li>
-      <li>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i><br /><%=link_to "Update Book Details",books_path,method: :get%></li>
       <li> <i class="fa fa-user" aria-hidden="true"></i><br />
          <%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%></li>
       <li> <i class="fa fa-sign-out" aria-hidden="true"></i><br />
