@@ -1,10 +1,41 @@
 <div class="books">
 <p id="notice"><%= notice %></p>
+<aside>
+  <nav>
+    <%if SellerProfile.where(seller_id: current_seller.id).first %>
+    <ul>
+      <li><img src="/logo.png"/></li>
+      <li id="myBooks">
+        <%= link_to books_path do %>
+        <i class="fa fa-book" aria-hidden="true"></i><br />
+        My Books
+     <%end%></li>
+      <li >
+         <%= link_to seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id) do%>
+<i class="fa fa-user" aria-hidden="true"></i><br />
+your seller profile
+<%end%></li>
+      <li>
+         <%=link_to destroy_seller_session_path, method: :delete do%>
+  <i class="fa fa-sign-out" aria-hidden="true"></i><br />
+  signout
+  <%end%></li>
+      <li>
+        <%= link_to  url_for(controller: :home, action: :seller) do%>
+  <i class="fa fa-arrow-left" aria-hidden="true"></i><br />
+  back to index
+  <%end%></li>
+        <li>
+          <%= link_to  books_path do%>
+<i class="fa fa-arrow-left" aria-hidden="true"></i><br />
+Back to books
+<%end%></li>
+      </ul>
+  </nav>
+  <%end%>
+</aside>
+<main>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @book.seller %>
-</p>
 
 <p>
   <strong>Name:</strong>
@@ -28,4 +59,5 @@
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+</main>
 </div>

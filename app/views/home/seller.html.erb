@@ -1,19 +1,29 @@
-
-
-
-
 <div id="seller">
 <aside>
   <nav>
     <%if SellerProfile.where(seller_id: current_seller.id).first %>
     <ul>
       <li><img src="/logo.png"/></li>
-      <li>  <i class="fa fa-book" aria-hidden="true"></i><br />
-        <%= link_to 'my books', books_path %></li>
-      <li> <i class="fa fa-user" aria-hidden="true"></i><br />
-         <%= link_to "your seller profile", seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id)%></li>
-      <li> <i class="fa fa-sign-out" aria-hidden="true"></i><br />
-         <%=link_to "signout",destroy_seller_session_path, method: :delete%></li>
+      <li>
+        <%= link_to books_path do%>
+<i class="fa fa-book" aria-hidden="true"></i><br />
+My books
+<%end%></li>
+      <li>
+         <%= link_to seller_profile_path(id: SellerProfile.where(seller_id:current_seller.id).first.id) do%>
+<i class="fa fa-user" aria-hidden="true"></i><br />
+your seller profile
+         <%end%></li>
+         <li id="black">
+           <%= link_to seller_path do%>
+           <i class="fa fa-plus" aria-hidden="true"></i><br />
+Add a Book
+           <%end%></li>
+      <li>
+         <%=link_to destroy_seller_session_path, method: :delete do%>
+ <i class="fa fa-sign-out" aria-hidden="true"></i><br />
+signout
+         <%end%></li>
     </ul>
   </nav>
   <%end%>
