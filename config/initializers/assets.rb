@@ -12,6 +12,7 @@ Rails.application.config.assets.precompile += %w( scaffolds.css )
 Rails.application.config.assets.precompile += %w( courses.scss )
 Rails.application.config.assets.precompile += %w( seller_profiles.css )
 Rails.application.config.assets.precompile += %w( books.css )
+Rails.application.config.assets.precompile += %w( quoras.css )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

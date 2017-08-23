@@ -1,11 +1,12 @@
 class QuorasController < ApplicationController
   before_action :set_quora, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "quora"
 
   # GET /quoras
   # GET /quoras.json
   def index
-    
+
     @quoras = Quora.where(question_id: nil)
   end
 
@@ -20,7 +21,7 @@ class QuorasController < ApplicationController
     @quora = Quora.new
   end
   def new_1
-    
+
     @quora = Quora.new
     @quora.question_id=params[:id]
   end
@@ -43,7 +44,7 @@ class QuorasController < ApplicationController
           format.html { redirect_to '/quoras', notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @quora }
         end
-        
+
       else
         format.html { render :new }
         format.json { render json: @quora.errors, status: :unprocessable_entity }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digilearn</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'quoras', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+        <link href="lib/noty.css" rel="stylesheet" />
+<script src="lib/noty.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

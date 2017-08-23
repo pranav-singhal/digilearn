@@ -53,20 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 				<li class="active"><%= link_to "Home",url_for(controller: :home, action: :index),method: :get%></li>
-			<li><a href="about.html">About</a></li>
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-			  <ul class="dropdown-menu">
-				<li><a href="services.html">Services1</a></li>
-				<li><a href="services1.html">Services2</a></li>
-				<li><a href="services2.html">Services3</a></li>
-				<li><a href="icons.html">Icons</a></li>
 
-			  </ul>
-			</li>
-			<li><%=link_to "teacher's courses", courses_path,method: :get%></li>
+			<li><%=link_to "Teacher's courses", courses_path,method: :get%></li>
 			<li><%=link_to "Sign is as Teacher", new_teacher_session_path, method: :get%></li>
-			 <li><a href="contact.html">Contact</a></li>
        <li><%=link_to "signout",destroy_user_session_path, method: :delete%>
 </li>
 
@@ -188,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			<div class="clearfix"> </div>
 			</div>
-			
+
 					<div class="news-top">
 				<div class=" col-md-6 latest-grid">
 					<div class="col-md-9 news-in">
@@ -261,8 +250,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="clearfix"> </div>
 						</div>
-						<a href="single.html"><img src="images/pc2.jpg" class="img-responsive" alt=""></a>
-						<a href="single.html" class="read">Explore courses</a>
+						<%= link_to url_for(controller: :home, action: :courses) do%>
+						<img src="images/pc2.jpg" class="img-responsive" alt="">
+							<%end%>
+							<%= link_to "Explore courses",url_for(controller: :home, action: :courses),class: "read"%>
+						<!-- <a href="single.html" class="read">Explore courses</a> -->
 					</div>
 					<div class="clearfix"> </div>
 				</div>

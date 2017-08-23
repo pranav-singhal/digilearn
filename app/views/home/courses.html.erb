@@ -41,20 +41,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  		  <ul class="nav navbar-nav">
         <li class="active"><%= link_to "Home",url_for(controller: :home, action: :index),method: :get%></li>
- 			<li><%= link_to "Courses", url_for(controller: :home, action: :courses)%></li>
- 			<li class="dropdown">
- 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
- 			  <ul class="dropdown-menu">
- 				<li><a href="services.html">Services1</a></li>
- 				<li><a href="services1.html">Services2</a></li>
- 				<li><a href="services2.html">Services3</a></li>
- 				<li><a href="icons.html">Icons</a></li>
-
- 			  </ul>
- 			</li>
- 			 <li><%=link_to "teacher's courses", courses_path,method: :get%></li>
+ 			 <li><%=link_to "Teacher's courses", courses_path,method: :get%></li>
  			  <li><%=link_to "Sign is as Teacher", new_teacher_session_path, method: :get%></li>
- 			 <li><a href="contact.html">Contact</a></li>
         <li><%=link_to "signout",destroy_user_session_path, method: :delete%>
  </li>
 
@@ -107,17 +95,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!---->
 		<div class="team">
 
-			<div class="col-md-8 team-grid">
+			<div class="col-md-8 team-grid" style="
+    height: 500px;
+    overflow-y: scroll;
+">
 			<div class="team-top">
 				<div class="team-head">
 					<label></label>
 					<h2>List of Courses</h2>
 				</div>
         <div>
-          <ul><%@courses.each do |course| %>
+            <ul><%@courses.each do |course| %>
             <li><%=link_to course.name, url_for(controller: :home, action: :showCourse, id: course.id), method: :get%></li>
+            <%end%>
+
           </ul>
-          <%end%>
         </div>
 
 
@@ -141,12 +133,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="feature-grid">
 					<div class="col-md-4 feature-grid">
-						<h5><a href="single.html">Consectetur adipisicing</a></h5>
+						<h5><a href="/shop">Book Store</a></h5>
 						<div class=" fe-grid">
 							<i class="glyphicon glyphicon-map-marker"></i>
 							<div class="feature-text">
-								<p>Tempor Street Lorem ipsum dolor,
-								TL 19034-88974, Country</p>
+	              <p>New Delhi,India,New Delhi,India,New Delhi,India</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

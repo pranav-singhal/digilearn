@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	border-bottom: 2px solid black;
-}	
+}
 .details{
 	width: 95%;
 	margin-top: 10px;
@@ -39,15 +39,13 @@ p{
 	<div class="questions">
 		<% if quora.user_id == current_user.id %>
 		<p>Question: <%=quora.content%></p>
-		<%= link_to 'Show', quora %>
-        <%= link_to 'Edit', edit_quora_path(quora) %>
-        <%= link_to 'Destroy', quora, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Answer',url_for(controller: :quoras,action: :new_1, id: quora.id) %> 	
-        
+        <%= link_to 'Edit this question', edit_quora_path(quora) %><br />
+        <%= link_to 'Remove this question', quora, method: :delete, data: { confirm: 'Are you sure?' } %><br />
+
         <% else %>
         <p>Question: <%=quora.content%></p>
-		<%= link_to 'Show', quora %>
-    	<%= link_to 'Answer',url_for(controller: :quoras,action: :new_1, id: quora.id) %>
+		<%= link_to 'Show Answers to this question', quora %><br />
+    	<%= link_to 'Write an answer',url_for(controller: :quoras,action: :new_1, id: quora.id) %>
 		<% end %>
 		<br><br>
 		<%ans=Quora.where(question_id: quora.id).first%>

@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .logo  a{
   font-size: 3em;
-    color: #BCB63E;
+    color: white;
     font-family: 'Oswald', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -75,10 +75,10 @@ h1,h2,h3,h4,h5,h6,label,p{
 		text-decoration:none;
 	}
 	.logo span {
-    border: 7px solid #BCB63E;
+    border: 7px solid white;
     padding: 0 10px;
     border-right: none;
-    color: #BCB63E;
+    color: white;
 }
 /*---*/
 .header-menu{
@@ -91,29 +91,29 @@ h1,h2,h3,h4,h5,h6,label,p{
    float:left;
 }
 .navbar-default .navbar-nav > .active > a{
-    color: #BCB63E;
+    color: white;
     background:none;
 }
 
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
-    color: #BCB63E;
+    color: white;
     background:#ff6900;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #BCB63E;
+    color: white;
     font-size: 1.2em;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #BCB63E;
+    color: white;
     background-color: #ff6900;
     outline: none;
 }
 .navbar-default .navbar-nav > .open > a,
  .navbar-default .navbar-nav > .open > a:hover,
  .navbar-default .navbar-nav > .open > a:focus {
-    color: #BCB63E;
+    color: white;
     background-color: #ff6900;
 }
 .dropdown-menu {
@@ -229,7 +229,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .banner h1{
     font-size: 2.5em;
-    color: #BCB63E;
+    color: white;
     font-family: 'Oswald', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -237,7 +237,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .banner h2{
 	font-size:2.5em;
-	color:#BCB63E;
+	color:white;
 	margin-top:0.3em;
     font-family: 'Oswald', sans-serif;
     font-weight: 900;
